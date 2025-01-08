@@ -5,6 +5,7 @@
 
 Forget the usual, mundane assistants. **Arch Chan** brings a refreshing, delightful touch to your day with her anime-inspired charm, making your daily interactions both helpful and entertaining. Ideal for anime lovers, Arch Linux enthusiasts, or anyone looking for a friendly assistant that stands out from the crowd.
 
+![Arch Chan](https://raw.githubusercontent.com/berkucuk/Arch-Chan-AI/refs/heads/main/ui.png)
 ## Key Features
 
 - **Friendly Daily Assistant**: Arch Chan is built to be your **daily AI companion**, engaging in friendly conversations, sharing tips, and adding a touch of fun to your routine.
