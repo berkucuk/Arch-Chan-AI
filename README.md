@@ -1,5 +1,5 @@
 # Arch Chan - Your Cute Anime Girl AI Assistant
-![Arch Chan](https://github.com/yourusername/yourrepo/blob/main/images/arch-chan.jpg?raw=true)
+![Arch Chan](https://raw.githubusercontent.com/berkucuk/Arch-Chan-AI/refs/heads/main/icons/arch-chan.png)
 
 **Arch Chan** is not your typical virtual assistant. She’s an **anime girl** who loves **Arch Linux** and is designed to be your **friendly, daily companion**. Whether you need someone to chat with, discuss Arch Linux, or just enjoy some fun conversation, Arch Chan is always here with a sweet voice and an energetic personality.
 
