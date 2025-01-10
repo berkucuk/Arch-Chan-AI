@@ -1,9 +1,9 @@
 [Desktop Entry]
-Version=1.0
+Version=2.0
 Type=Application
 Name=Arch Chan AI
 Comment=Launch Arch Chan AI Chat
 Exec=/usr/share/Arch-Chan-AI/python-env/bin/python3 /usr/share/Arch-Chan-AI/arch-chan.py
-Icon=/usr/share/Arch-Chan-AI/icons/arch-chan.png
+Icon=/usr/share/Arch-Chan-AI/icons/arch-chan_mini.png
 Terminal=false
 Categories=AI;Utility;
