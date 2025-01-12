@@ -12,7 +12,7 @@ import subprocess as sub
 import requests
 from PyQt5.QtWidgets import (QApplication, QWidget, QVBoxLayout, QHBoxLayout,
                            QLabel, QComboBox, QTextEdit, QLineEdit, QPushButton,
-                           QMessageBox)
+                           QMessageBox, QGraphicsBlurEffect, QStackedLayout)
 from PyQt5.QtGui import QPixmap, QFont
 from PyQt5.QtCore import Qt, QThread, pyqtSignal
 from PyQt5.QtGui import QIcon
@@ -289,7 +289,7 @@ class ChatBotGUI(QWidget):
     def __init__(self):
         super().__init__()
         self.current_language = "English"
-        self.voice_active = True  # Default voice state
+        self.voice_active = False  # Default voice state
         self.setWindowTitle('Arch Chan AI')
         self.setFixedSize(500, 900)
 
@@ -394,16 +394,38 @@ class ChatBotGUI(QWidget):
         print(f"Voice mode: {self.voice_active}")
 
     def setup_image(self, layout):
-        self.image_label = QLabel(self)
+        # Fotoğrafı yükle
         pixmap = QPixmap("/usr/share/Arch-Chan-AI/icons/arch-chan.png")
+
         if not pixmap.isNull():
-            pixmap = pixmap.scaled(500, 400, Qt.KeepAspectRatio, Qt.SmoothTransformation)
-            self.image_label.setPixmap(pixmap)
-            self.image_label.setAlignment(Qt.AlignCenter)
+            # Container widget oluştur
+            container = QWidget(self)
+            container.setFixedSize(500, 400)
+            
+            # --- Bulanık arka plan fotoğrafı ---
+            blur_label = QLabel(container)
+            blurred_pixmap = pixmap.scaled(500, 400, Qt.KeepAspectRatio, Qt.SmoothTransformation)
+            blur_label.setPixmap(blurred_pixmap)
+            
+            blur_effect = QGraphicsBlurEffect()
+            blur_effect.setBlurRadius(20)  # Bulanıklık seviyesi
+            blur_label.setGraphicsEffect(blur_effect)
+            blur_label.setAlignment(Qt.AlignCenter)
+            blur_label.setGeometry(0, 0, 500, 400)  # Absolute positioning
+
+            # --- Net ön plan fotoğrafı ---
+            front_label = QLabel(container)
+            front_pixmap = pixmap.scaled(500, 400, Qt.KeepAspectRatio, Qt.SmoothTransformation)
+            front_label.setPixmap(front_pixmap)
+            front_label.setAlignment(Qt.AlignCenter)
+            front_label.setGeometry(0, 0, 500, 400)  # Absolute positioning
+
+            # Container'ı layout'a ekle
+            layout.addWidget(container)
         else:
-            logger.error("Failed to load image")
             QMessageBox.warning(self, "Warning", "Failed to load image")
-        layout.addWidget(self.image_label)
+
+
 
     def setup_chat_display(self, layout):
         self.chat_display = QTextEdit()
