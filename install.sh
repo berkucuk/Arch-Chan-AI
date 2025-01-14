@@ -30,13 +30,14 @@ else
 fi
 
 sudo pacman -S python-virtualenv libpng --noconfirm --needed
-chmod +x Arch-Chan-AI.desktop
+sudo apt install python3-venv
+chmod +x Linux-Chan-AI.desktop
 mkdir -p ~/.local/share/applications/
-cp Arch-Chan-AI.desktop ~/.local/share/applications/
-sudo mkdir /usr/share/Arch-Chan-AI
-sudo cp .env /usr/share/Arch-Chan-AI
-sudo python3 -m venv /usr/share/Arch-Chan-AI/python-env
-sudo /usr/share/Arch-Chan-AI/python-env/bin/pip3 install -r requirements.txt
-sudo cp arch-chan.py /usr/share/Arch-Chan-AI
-sudo cp -r icons /usr/share/Arch-Chan-AI
-sudo mkdir /usr/share/Arch-Chan-AI/temp_voice
+cp Linux-Chan-AI.desktop ~/.local/share/applications/
+sudo mkdir /usr/share/Linux-Chan-AI
+sudo cp .env /usr/share/Linux-Chan-AI
+sudo python3 -m venv /usr/share/Linux-Chan-AI/python-env
+sudo /usr/share/Linux-Chan-AI/python-env/bin/pip3 install -r requirements.txt
+sudo cp linux-chan.py /usr/share/Linux-Chan-AI
+sudo cp -r icons /usr/share/Linux-Chan-AI
+sudo mkdir /usr/share/Linux-Chan-AI/temp_voice

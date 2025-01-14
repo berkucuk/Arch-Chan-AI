@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=2.0
+Type=Application
+Name=Linux Chan AI
+Comment=Launch Linux Chan AI Chat
+Exec=/usr/share/Linux-Chan-AI/python-env/bin/python3 /usr/share/Linux-Chan-AI/linux-chan.py
+Icon=/usr/share/Linux-Chan-AI/icons/kali-chan_mini.png
+Terminal=false
+Categories=AI;Utility;
